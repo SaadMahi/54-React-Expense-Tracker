@@ -7,7 +7,7 @@ function ExpenseItem({ title, amount = "please pass in amount", date }) {
 
       
 
-
+// click to output 'Update' on UI
   const [defTitle, setTitle] = useState(title);
 
   function click() {
