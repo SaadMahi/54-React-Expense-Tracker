@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import "../ExpenseForm/ExpenseForm.css";
 
-function ExpenseForm() {
+function ExpenseForm(props) {
   const [data, setData] = useState({
     title: "",
     amount: "",
-    date: "",
+   
   });
+
+
+  const [date, setDate] = useState(new Date(2023, 8, 12))
 
   function checkUserIntput(e) {
     const { name, value } = e.target;
@@ -17,14 +20,20 @@ function ExpenseForm() {
   function submitHandler(e) {
     e.preventDefault();
 
-    console.log(data);
+    props.pullData({...data, date: new Date(date)});
+
+    setDate('')
 
     setData({
       title: "",
       amount: "",
-      date: "",
+
     });
   }
+
+  const dateHandler = ((e) => {
+    setDate(e.target.value)
+  })
 
   return (
     <form onSubmit={submitHandler}>
@@ -52,9 +61,9 @@ function ExpenseForm() {
         <div className="new-expense__control">
           <label>Date</label>
           <input
-            onChange={checkUserIntput}
+            onChange={dateHandler}
             name="date"
-            value={data.date}
+            value={date}
             type="date"
             min="2020-01-01"
             max="2023-12-01"

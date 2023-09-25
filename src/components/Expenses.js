@@ -27,8 +27,7 @@ function Expenses(props) {
     }
   };
 
-  /*  const pro = props.items.map((el) =>  el);
-  console.log(pro) */
+  
 
   return (
     <Card className="expenses">
@@ -43,13 +42,15 @@ function Expenses(props) {
 
       <h2>Let's get started!</h2>
 
-      {props.items.map((expense) => (
+      {props.items.map((expense, index) => (
         <ExpenseItem
+          key={index}
           title={expense.title}
           amount={expense.amount}
           date={expense.date}
         />
       ))} 
+      
     </Card>
   );
 }

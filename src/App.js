@@ -1,7 +1,9 @@
 import Expenses from "./components/Expenses";
-import NewExpense from "./components/ExpenseForm/NewExpense";
+import NewExpense from './components/ExpenseForm/NewExpense'
+import { useState } from "react";
 
 function App() {
+  
   const expenses = [
     {
       id: "e1",
@@ -33,15 +35,31 @@ function App() {
       amount: 161000,
       date: new Date(2023, 8, 12),
     },
+    
+    
   ];
 
-  return (
-    <>
-      <NewExpense></NewExpense>
+const [data, setData] = useState(expenses);
 
-      <Expenses items={expenses} />
-    </>
-  );
+  const pullData = ((pulledData) => {
+    setData((prev) =>  [...prev, pulledData])
+  
+    
+})
+
+console.log(data);
+
+  return(
+    <>
+      <NewExpense pullData={pullData} ></NewExpense>
+      
+  <Expenses 
+  items={data} />
+
+
+  
+  </>
+  )
 }
 
 export default App;

@@ -1,11 +1,12 @@
 import ExpenseForm from "./ExpenseForm";
 import '../ExpenseForm/NewExpense.css'
 
-function NewExpense(){
+function NewExpense(props){
+
 
     return(
     <div className="new-expense">
-    <ExpenseForm />
+    <ExpenseForm pullData={props.pullData} />
     </div>
     )
 }
