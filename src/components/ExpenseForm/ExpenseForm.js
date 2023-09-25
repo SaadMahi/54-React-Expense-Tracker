@@ -5,11 +5,9 @@ function ExpenseForm(props) {
   const [data, setData] = useState({
     title: "",
     amount: "",
-   
   });
 
-
-  const [date, setDate] = useState(new Date(2023, 8, 12))
+  const [date, setDate] = useState(new Date(2023, 8, 12));
 
   function checkUserIntput(e) {
     const { name, value } = e.target;
@@ -20,22 +18,19 @@ function ExpenseForm(props) {
   function submitHandler(e) {
     e.preventDefault();
 
-    props.pullData({...data, date: new Date(date)});
+    props.pullData({ ...data, date: new Date(date) });
 
-    setDate('')
+    setDate("");
 
     setData({
       title: "",
       amount: "",
-
     });
   }
 
- 
-
-  const dateHandler = ((e) => {
-    setDate(e.target.value)
-  })
+  const dateHandler = (e) => {
+    setDate(e.target.value);
+  };
 
   return (
     <form onSubmit={submitHandler}>

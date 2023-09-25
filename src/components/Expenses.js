@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import ExpenseItem from "./ExpenseItem";
+import ExpensesList from "./ExpenseForm/ExpensesList";
+
 import ExpensesFilter from "./ExpenseFilter/ExpenseFilter";
 import Card from "./Card";
 import "./css/Expenses.css";
@@ -19,18 +20,7 @@ function Expenses(props) {
   );
 
 
-  let emptyExpenseList = <p>No expense found!!!</p>
 
-  if(filteredExpensesByDate.length > 0){
-    emptyExpenseList = filteredExpensesByDate.map((expense, index) => (
-      <ExpenseItem
-        key={index}
-        title={expense.title}
-        amount={expense.amount}
-        date={expense.date}
-      />
-    ))
-  }
 
   return (
     <Card className="expenses">
@@ -41,7 +31,8 @@ function Expenses(props) {
 
       <h2>Let's get started!</h2>
 
-    {emptyExpenseList}
+<ExpensesList filteredExpensesByDate={filteredExpensesByDate}/>
+  
     
     </Card>
   );
