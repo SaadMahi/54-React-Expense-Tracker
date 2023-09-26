@@ -3,6 +3,8 @@ import ExpensesList from "./ExpenseForm/ExpensesList";
 
 import ExpensesFilter from "./ExpenseFilter/ExpenseFilter";
 import Card from "./Card";
+
+import ExpenseChart from "./ExpenseForm/ExpenseChart";
 import "./css/Expenses.css";
 
 function Expenses(props) {
@@ -19,9 +21,6 @@ function Expenses(props) {
     (expense) => expense.date.getFullYear().toString() === filterYear
   );
 
-
-
-
   return (
     <Card className="expenses">
       <ExpensesFilter
@@ -29,11 +28,11 @@ function Expenses(props) {
         defaultYear={filterYear}
       />
 
-      <h2>Let's get started!</h2>
+      <ExpenseChart expenses={filteredExpensesByDate} />
 
-<ExpensesList filteredExpensesByDate={filteredExpensesByDate}/>
-  
-    
+      <h2 style={{color: '#fff'}}>Let's get started!</h2>
+
+      <ExpensesList filteredExpensesByDate={filteredExpensesByDate} />
     </Card>
   );
 }
