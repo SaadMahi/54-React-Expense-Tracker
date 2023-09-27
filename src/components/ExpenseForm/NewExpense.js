@@ -5,7 +5,8 @@ import { useState } from "react";
 function NewExpense(props) {
   const addNewExpenseFormBtn = (
     <div className="new-expense">
-      <div className="new-expense__actions btn--center">
+      <div
+       className="new-expense__actions btn--center">
         <button
           onClick={addNewExpenseBtn}
           className="new-expense__add-expense-btn"

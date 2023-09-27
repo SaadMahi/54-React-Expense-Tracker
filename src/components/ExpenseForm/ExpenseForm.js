@@ -65,13 +65,13 @@ function ExpenseForm(props) {
             name="date"
             value={date}
             type="date"
-            min="2020-01-01"
+            min="2019-01-01"
             max="2023-12-01"
           />
         </div>
       </div>
       <div className="new-expense__actions">
-        <button onClick={props.cancelFormFunc}>Cancel</button>
+        <button onClick={props.cancelFormFunc} style={{marginBottom: '1rem', marginTop: '1rem'}}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>

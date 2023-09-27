@@ -6,7 +6,7 @@
     max-width: 95%;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 8px rgba(228, 100, 100, 0.25);
   }
   
   .new-expense button {
@@ -14,7 +14,7 @@
     cursor: pointer;
     padding: 1rem 2rem;
     border: 1px solid #40005d;
-    background-color: #40005d;
+    background-color: #40005e;
     color: white;
     border-radius: 12px;
     margin-right: 1rem;
@@ -40,3 +40,4 @@
 .btn--center{
   text-align: center;
 }
+
